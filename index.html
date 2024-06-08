@@ -1,10 +1,61 @@
 <!DOCTYPE html>
+
 <head>
-    <title>안녕</title>
     <meta charset="utf-8">
+    <title>H.A.E.</title>
+    <script src="calculate.js"></script>
 </head>
+
 <body>
-    first web page
-    <br>
-    안녕 이선생님
+    <h1>Welcome HID</h1>
+    <hr>
+    <p>
+        데이터를 입력해주세요.
+    </p>
+    <textarea id="customerData" cols="40" rows="20">
+        1022-120	M	300 
+        1022-121	M	300 
+        1022-128	M	400 
+        1022-130	M	100 
+        1022-131	M	300 
+        1022-138	M	400 
+        1022-122	L	300 
+        1022-123	L	300 
+        1022-128	L	400 
+        1022-132	L	300 
+        1022-133	L	300 
+        1022-138	L	400 
+        1022-124	LL	200 
+        1022-125	LL	200 
+        1022-128	LL	200 
+        1022-134	LL	200 
+        1022-135	LL	200 
+        1022-138	LL	200 
+        1022-200	M	720 
+        1022-201	M	800 
+        1022-208	M	200 
+        1022-210	M	600 
+        1022-211	M	680 
+        1022-218	M	200 
+        1022-202	L	720 
+        1022-203	L	800 
+        1022-208	L	200 
+        1022-212	L	600 
+        1022-213	L	680 
+        1022-218	L	200 
+        1022-204	LL	440 
+        1022-205	LL	480 
+        1022-208	LL	100 
+        1022-134	LL	360 
+        1022-135	LL	400 
+        1022-218	LL	100 
+                
+        </textarea><br />
+    <label>page당 출력할 갯수는?</label>
+    <input id="countPerPage">
+    <br />
+    <br />
+    <button id="calculate" type="button">계산하기</button>
 </body>
+
+</html>
