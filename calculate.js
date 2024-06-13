@@ -2,41 +2,50 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("calculate")
         .addEventListener("click", function () {
-            var customerData = document.getElementById("customerData").value;
+            let customerData = document.getElementById("customerData").value;
             // alert(customerData);
             ChangeCustomerData(customerData);
-            var countPerPage = document.getElementById("countPerPage").value;
+
+            let countPerPage = document.getElementById("countPerPage").value;
             // console.log(countPerPage);
+
+            // let requestData = makeRequestData(customerData, countPerPage);
+
+            // const url = "http://testkos.duckdns.org/hae/posts";
+            // postData(url)
+            // or
             // logJSONData();
-            postData("http://testkos.duckdns.org/value/")
         });
 });
 
-function ChangeCustomerData(customerRawData) {
-    var arrayData = new Array();
-    customerRawData = customerRawData.trim();
-    // console.log(customerRawData.length);
-    customerRawData.split("\n").forEach(row => {
+function makeRequestData(customerData, countPerPage) {
+
+}
+
+function ChangeCustomerData(data) {
+    var result = new Array();
+    data = data.trim();
+    // console.log(data.length);
+    data.split("\n").forEach(row => {
         row = row.trim();
         // console.log(row);
         if (row != "") {
             data = row.split("\t", 3);
             // console.log(data);
-            arrayData.push(data);
+            result.push(data);
         }
     });
-    // console.log(arrayData);
-    return arrayData;
-}
-
-async function logJSONData() {
-    const response = await fetch("http://testkos.duckdns.org/");
-    const jsonData = await response.json();
-    console.log(jsonData);
+    // console.log(result);
+    return result;
 }
 
 // POST 메서드 구현 예제
 async function postData(url = "", data = {}) {
+    // const otherParam = {
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     }
+    // }
     // 옵션 기본 값은 *로 강조
     const response = await fetch(url, {
         method: "POST", // *GET, POST, PUT, DELETE 등
@@ -59,3 +68,8 @@ async function postData(url = "", data = {}) {
 //     console.log(data); // JSON 데이터가 `data.json()` 호출에 의해 파싱됨
 // });
 
+// async function logJSONData() {
+//     const response = await fetch("http://testkos.duckdns.org/");
+//     const jsonData = await response.json();
+//     console.log(jsonData);
+// }
