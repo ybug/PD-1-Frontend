@@ -1,22 +1,18 @@
+function cal() {
+    let customerData = document.getElementById("customerData").value;
+    // alert(customerData);
+    ChangeCustomerData(customerData);
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("calculate")
-        .addEventListener("click", function () {
-            let customerData = document.getElementById("customerData").value;
-            // alert(customerData);
-            ChangeCustomerData(customerData);
+    let countPerPage = document.getElementById("countPerPage").value;
+    // console.log(countPerPage);
 
-            let countPerPage = document.getElementById("countPerPage").value;
-            // console.log(countPerPage);
+    // let requestData = makeRequestData(customerData, countPerPage);
 
-            // let requestData = makeRequestData(customerData, countPerPage);
-
-            // const url = "http://testkos.duckdns.org/hae/posts";
-            // postData(url)
-            // or
-            // logJSONData();
-        });
-});
+    // const url = "http://testkos.duckdns.org/hae/posts";
+    // postData(url)
+    // or
+    // logJSONData();
+};
 
 function makeRequestData(customerData, countPerPage) {
 
@@ -67,9 +63,13 @@ async function postData(url = "", data = {}) {
 // postData("https://example.com/answer", { answer: 42 }).then((data) => {
 //     console.log(data); // JSON 데이터가 `data.json()` 호출에 의해 파싱됨
 // });
-
 // async function logJSONData() {
 //     const response = await fetch("http://testkos.duckdns.org/");
 //     const jsonData = await response.json();
 //     console.log(jsonData);
 // }
+
+// main
+const calcuateButton = document.getElementById("calculate");
+
+calcuateButton.addEventListener("click", cal);
