@@ -19,7 +19,7 @@ function makeRequestData(customerData, countPerPage) {
 }
 
 function ChangeCustomerData(data) {
-    var result = new Array();
+    let result = new Array();
     data = data.trim();
     // console.log(data.length);
     data.split("\n").forEach(row => {
